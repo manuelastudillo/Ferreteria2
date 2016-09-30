@@ -26,6 +26,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_admin'
 gem 'devise'
 gem 'cancan'
+gem 'adminlte-generators'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'rut_validator'
+gem 'prawn'
+gem 'prawn-table','~> 0.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,0 +1,32 @@
+<% content_for :content_header  do %>
+    <section class="content-header">
+      <h1>Marcas</h1>
+
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><%= link_to "Marcas", marcas_path %></li>
+        <li class="active">Mostrar</li>
+      </ol>
+    </section>
+<% end %>
+
+<section class="content invoice botones">
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @marca.nombre %>
+  </p>
+  <p>
+    <strong> Abreviación Categoria:</strong>
+    <%= @marca.abreviacion %>
+  </p>
+
+  <p>
+    <strong> Descripcion De La Categoria:</strong>
+    <%= @marca.descripcion %>
+  </p>
+
+
+  <%= link_to 'Editar', editar_marca_url,:class =>"btn btn-success" %>
+  <%= link_to 'Atras', marcas_url,:class =>"btn btn-info" %>
+</section>

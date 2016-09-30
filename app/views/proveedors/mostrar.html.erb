@@ -1,0 +1,80 @@
+<% content_for :content_header  do %>
+    <section class="content-header">
+      <h1>Proveedor</h1>
+
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><%= link_to "Proveedor", proveedors_path %></li>
+        <li class="active">Mostrar</li>
+      </ol>
+    </section>
+<% end %>
+
+<section class="content invoice botones">
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @proveedor.nombre %>
+  </p>
+  <p>
+    <strong> Abreviacion De Proveedor:</strong>
+    <%= @proveedor.abreviacion %>
+  </p>
+    <p>
+    <strong> Razon Social:</strong>
+    <%= @proveedor.razon_social %>
+  </p>
+
+
+  <p>
+    <strong> Rut Proveedor:</strong>
+    <%= @proveedor.rut %>
+  </p>
+
+  <p>
+    <strong> Domicilio:</strong>
+    <%= @proveedor.domicilio %>
+  </p>
+
+  <p>
+    <strong> Comuna:</strong>
+    <%= @proveedor.comuna.nombre.to_s %>
+  </p>
+
+  <p>
+    <strong> Fax:</strong>
+    <%= @proveedor.fax %>
+  </p>
+
+
+  
+  <p>
+    <strong> Telefono:</strong>
+    <%= @proveedor.telefono1 %>
+  </p>
+  
+    <p>
+    <strong> Segundo Telefono:</strong>
+    <%= @proveedor.telefono2 %>
+  </p>
+  
+    <p>
+    <strong> Web Proveedor:</strong>
+    <%= @proveedor.web %>
+  </p>
+
+  <p>
+    <strong> Email:</strong>
+    <%= @proveedor.email %>
+  </p>
+  
+    <p>
+    <strong> Descripcion:</strong>
+    <%= @proveedor.descripcion %>
+  </p>
+
+
+
+  <%= link_to 'Editar', editar_proveedor_url,:class =>"btn btn-success" %>
+  <%= link_to 'Atras', proveedors_url,:class =>"btn btn-info" %>
+</section>

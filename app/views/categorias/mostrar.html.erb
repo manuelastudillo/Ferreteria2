@@ -1,0 +1,37 @@
+<% content_for :content_header  do %>
+    <section class="content-header">
+      <h1>Categorias</h1>
+
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><%= link_to "Categorias", categorias_path %></li>
+        <li class="active">Mostrar</li>
+      </ol>
+    </section>
+<% end %>
+
+<section class="content invoice botones">
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @categoria.nombre %>
+  </p>
+  <p>
+    <strong> Abreviación Categoria:</strong>
+    <%= @categoria.abreviacion %>
+  </p>
+<!-- 
+    <p>
+   <strong> Estado De La Categoria</strong>
+    <%= @categoria.estado%>
+  </p>
+-->
+  <p>
+    <strong> Descripcion De La Categoria:</strong>
+    <%= @categoria.descripcion %>
+  </p>
+
+
+  <%= link_to 'Editar', editar_categoria_url,:class =>"btn btn-success" %>
+  <%= link_to 'Atras', categorias_url,:class =>"btn btn-info" %>
+</section>

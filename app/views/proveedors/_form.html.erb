@@ -1,0 +1,116 @@
+<section class="content invoice">
+  <div class="row">
+    <div class="col-md-10">
+      <%= form_for(@proveedor, :html => { :role => "form" }) do |f| %>
+        <% if @proveedor.errors.any? %>
+          <div class="alert alert-danger alert-dismissable" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            <h4><%= pluralize(@proveedor.errors.count, "error") %> prohibido guardar este proveedor:</h4>
+
+            <ul>
+            <% @proveedor.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+       <div class="row" style="margin-top: 30px;">
+      <div class="form-group" >
+        <%= f.label :nombre,"Nombre:", :class =>"col-md-2" %>
+        <div class="col-md-10" style="margin-bottom: 10px;">
+        <%= f.text_field :nombre, placeholder: "Ingrese Nombre Del Proveedor", :class =>"col-md-8"  %>
+     </div> 
+     </div> 
+
+      <div class="form-group" >
+        <%= f.label :abreviacion ," Abreviacion:", :class =>"col-md-2"%>
+        <div class="col-md-10" style="margin-bottom: 10px;">
+        <%= f.text_field :abreviacion,  placeholder: "Ingrese Nombre Abreviado Del Proveedor", :class =>"col-md-8" %>
+      </div>
+      </div>
+      
+      <div class="form-group" >
+        <%= f.label :razon_social, "Razón:", :class => "col-md-2" %>
+      <div class="col-md-10" style="margin-bottom: 10px;">
+        <%= f.text_field :razon_social, placeholder:"Ingrese Razón Social", :class =>"col-md-8" %>
+      </div>
+      </div>
+     
+      <div class="form-group">
+        <%= f.label :rut,"Rut:", :class => "col-md-2"%>
+        <div class="col-md-10" style="margin-bottom: 10px;">
+        <%= f.text_field :rut, placeholder:"Ingrese solo los numeros sin guion ", :class =>"col-md-8" %>
+      </div>
+      </div>
+
+  
+
+      <div class="form-group" >
+        <%= f.label :domicilio,"Domicilio:", :class => "col-md-2" %>
+        <div class="col-md-10" style="margin-bottom: 10px;">
+        <%= f.text_field :domicilio , placeholder:"Domicilio Del proveedor", :class =>"col-md-8"%>
+      </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :comuna,"Comuna:", :class => "col-md-2" %>
+        <div class="col-md-10" style="margin-bottom: 10px;">
+        <%= f.select('comuna_id', Comuna.all.collect{|c| [c.nombre, c.id]}, class: 'chosen-select') %>
+      </div>
+      </div>
+
+      <div class="form-group ">
+        <%= f.label :fax ,"fax:", :class => "col-md-2"%>
+                <div class="col-md-10" style="margin-bottom: 10px;">
+        <%= f.text_field :fax ,placeholder:"Fax Del Domicilio", :class =>"col-md-8"%>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :telefono1, "Teléfono:", :class => "col-md-2" %>
+                <div class="col-md-10" style="margin-bottom: 10px;">
+      <%= f.text_field :telefono1 , placeholder:"Teléfono Del proveedor", :class =>"col-md-8"%>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :telefono2,"Teléfono 2:", :class => "col-md-2" %>
+            <div class="col-md-10" style="margin-bottom: 10px;">
+        <%= f.text_field :telefono2 ,placeholder:"Segundo Teléfono Del proveedor", :class =>"col-md-8"%>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :web, "Web:", :class => "col-md-2" %>
+        <div class="col-md-10" style="margin-bottom: 10px;">
+        <%= f.text_field :web ,placeholder:"Sitio Web Del proveedor", :class =>"col-md-8"%>
+      </div>
+      </div>
+       
+
+
+      <div class="form-group">
+        <%= f.label :email, "Email:", :class => "col-md-2"  %>
+        <div class="col-md-10" style="margin-bottom: 10px;">
+        <%= f.text_field :email ,placeholder:"Email Del proveedor", :class =>"col-md-8"%>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :descripcion, "Descripción:", :class => "col-md-2"  %>
+        <div class="col-sm-10" style="margin-bottom: 10px;">
+        <%= f.text_area :descripcion ,placeholder:"Descripción Del proveedor", :class =>"col-md-8"%>
+      </div>
+      </div>
+
+
+
+      <div class="form-group botones2">
+        <%= f.submit :class => "btn btn-primary" %>
+      </div>
+        </div>
+    <% end %>
+    </div>
+  </div>
+</section>

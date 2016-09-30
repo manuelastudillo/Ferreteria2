@@ -6,6 +6,53 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root 'bienvenido#index'
+
+  get 'clientes/', to: 'clientes#index', as: 'clientes'
+  get 'clientes/nuevo', as: 'nuevo_cliente'
+  post 'clientes/', to: 'clientes#crear'
+  get 'clientes/:id/editar', to: 'clientes#editar', as: 'editar_cliente'
+  get 'clientes/:id', to: 'clientes#mostrar', as: 'cliente'
+  put 'clientes/:id',to: 'clientes#update'
+  patch 'clientes/:id' ,to: 'clientes#update'
+  delete 'clientes/:id', to: 'clientes#eliminar'
+  
+
+  get 'categorias/', to: 'categorias#index', as: 'categorias'
+  get 'categorias/nuevo', as: 'nuevo_categoria'
+  post 'categorias/', to: 'categorias#crear'
+  get 'categorias/:id/editar', to: 'categorias#editar', as: 'editar_categoria'
+  get 'categorias/:id', to: 'categorias#mostrar', as: 'categoria'
+  put 'categorias/:id',to: 'categorias#update'
+  patch 'categorias/:id' ,to: 'categorias#update'
+  delete 'categorias/:id', to: 'categorias#eliminar'
+
+  get 'marcas/', to: 'marcas#index', as: 'marcas'
+  get 'marcas/nuevo', as: 'nuevo_marca'
+  post 'marcas/', to: 'marcas#crear'
+  get 'marcas/:id/editar', to: 'marcas#editar', as: 'editar_marca'
+  get 'marcas/:id', to: 'marcas#mostrar', as: 'marca'
+  put 'marcas/:id',to: 'marcas#update'
+  patch 'marcas/:id' ,to: 'marcas#update'
+  delete 'marcas/:id', to: 'marcas#eliminar'
+
+  get 'proveedors/', to: 'proveedors#index', as: 'proveedors'
+  get 'proveedors/nuevo', as: 'nuevo_proveedor'
+  post 'proveedors/', to: 'proveedors#crear'
+  get 'proveedors/:id/editar', to: 'proveedors#editar', as: 'editar_proveedor'
+  get 'proveedors/:id', to: 'proveedors#mostrar', as: 'proveedor'
+  put 'proveedors/:id',to: 'proveedors#update'
+  patch 'proveedors/:id' ,to: 'proveedors#update'
+  delete 'proveedors/:id', to: 'proveedors#eliminar'
+  
+  get 'productos/', to: 'productos#index', as: 'productos'
+  get 'productos/nuevo', as: 'nuevo_producto'
+  post 'productos/', to: 'productos#crear'
+  get 'productos/:id/editar', to: 'productos#editar', as: 'editar_producto'
+  get 'productos/:id', to: 'productos#mostrar', as: 'producto'
+  put 'productos/:id',to: 'productos#update'
+  patch 'productos/:id' ,to: 'productos#update'
+  delete 'productos/:id', to: 'productos#eliminar'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

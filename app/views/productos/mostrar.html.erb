@@ -1,0 +1,80 @@
+<% content_for :content_header  do %>
+    <section class="content-header">
+      <h1>Producto</h1>
+
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><%= link_to "Clientes", productos_path %></li>
+        <li class="active">Mostrar</li>
+      </ol>
+    </section>
+<% end %>
+
+<section class="content invoice botones">
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @producto.nombre %>
+  </p>
+  <p>
+    <strong> Abreviacion:</strong>
+    <%= @producto.abreviacion %>
+  </p>
+    <p>
+    <strong> Comision:</strong>
+    <%= @producto.comision %>
+  </p>
+
+
+  <p>
+    <strong> Stock:</strong>
+    <%= @producto.stock %>
+  </p>
+
+  <p>
+    <strong> Stock Minimo:</strong>
+    <%= @producto.stockminimo %>
+  </p>
+
+  <p>
+    <strong> Precio Compra:</strong>
+    <%= @producto.precio_compra %>
+  </p>
+
+  <p>
+    <strong> Precio Venta:</strong>
+    <%= @producto.precio_venta %>
+  </p>
+
+  <p>
+    <strong> Categortia:</strong>
+    <%= @producto.categoria.nombre.to_s %>
+  </p>
+
+  <p>
+    <strong> Stock Del Producto:</strong>
+    <%= @producto.stock %>
+  </p>
+  
+    <p>
+    <strong> Marca:</strong>
+    <%= @producto.marca.nombre.to_s %>
+  </p>
+
+    <p>
+    <strong> Proveedor:</strong>
+    <%= @producto.proveedor.nombre.to_s%>
+  </p>
+
+  <p>
+    <strong> Descripción:</strong>
+    <%= @producto.descripcion %>
+  </p>
+  
+
+
+
+
+  <%= link_to 'Editar', editar_producto_url,:class =>"btn btn-success" %>
+  <%= link_to 'Atras', productos_url,:class =>"btn btn-info" %>
+</section>
