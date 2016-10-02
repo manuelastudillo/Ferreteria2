@@ -1,0 +1,43 @@
+<%= nested_form_for@boleta, url: boletas_path, html: { method: :post } do |f| %>
+  <% if @boleta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@boleta.errors.count, "error") %> prohibited this boleta from being saved:</h2>
+
+
+<div class="field">
+  <%= f.collection_check_boxes :producto_id, Producto.all, :id, :nombre %>
+</div>
+      <ul>
+      <% @boleta.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field">
+    <%= f.label :tipo, 'Tipo De Boleta' %><br>
+      <%= f.select('tipo', Factura: 'chosen-select', Boleta: 'chosen-select') %>
+  </div>
+    <fieldset id="ventas">
+    <%= f.fields_for :ventas do |ventas_form| %>
+      <div class="field">
+        <%= ventas_form.label :monto, 'monto de la venta' %><br>
+        <%= ventas_form.text_field :monto %>
+      </div>
+      <div class="field">      
+        <%= ventas_form.label :fecha %><br>
+        <%= ventas_form.text_field :fecha %>
+      </div>
+      <%= ventas_form.link_to_remove "Eliminar esta venta" %>
+    <% end %>
+    <p><%= f.link_to_add "Agregar una tarea", :ventas %></p>
+  </fieldset>
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

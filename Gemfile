@@ -32,6 +32,7 @@ gem 'will_paginate-bootstrap'
 gem 'rut_validator'
 gem 'prawn'
 gem 'prawn-table','~> 0.1.0'
+gem 'nested_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

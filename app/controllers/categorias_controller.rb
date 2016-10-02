@@ -24,7 +24,7 @@ end
     respond_to do |format|
       if @categoria.save
 
-   format.html{redirect_to categoria_url(@categoria), notice:  'categoria Guardado Con Exito'}
+   format.html{redirect_to categoria_url(@categoria), notice:  'Categoria Guardado Con Exito'}
 
       else
         format.html{render :nuevo}
@@ -41,7 +41,7 @@ end
   def update
     respond_to do |format|
       if @categoria.update(categoria_params)
-        format.html{redirect_to @categoria, notice: 'categoria Editado con Exito'}
+        format.html{redirect_to @categoria, notice: 'Categoria Editado con Exito'}
       else
         format.html{render :edit}
       end
@@ -51,7 +51,7 @@ end
   def eliminar
     @categoria.destroy
     respond_to do |format|
-      format.html { redirect_to categorias_url, notice: 'categoria eliminado con Exito.' }
+      format.html { redirect_to categorias_url, notice: 'Categoria eliminado con Exito.' }
     end
   end
 

@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930163029) do
+ActiveRecord::Schema.define(version: 20161002052711) do
+
+  create_table "boleta", force: :cascade do |t|
+    t.datetime "fecha"
+    t.integer  "numero",     limit: 4
+    t.integer  "monto",      limit: 4
+    t.boolean  "factura"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "boletas", force: :cascade do |t|
+    t.datetime "fecha"
+    t.integer  "numero",     limit: 4
+    t.integer  "monto",      limit: 4
+    t.boolean  "factura"
+    t.integer  "cantidad",   limit: 4
+    t.integer  "total",      limit: 4
+    t.text     "tipo",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "categorias", force: :cascade do |t|
     t.text     "nombre",      limit: 65535
@@ -140,6 +161,35 @@ ActiveRecord::Schema.define(version: 20160930163029) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "venta", force: :cascade do |t|
+    t.integer  "numero",      limit: 4
+    t.integer  "cliente_id",  limit: 4
+    t.integer  "usuario_id",  limit: 4
+    t.integer  "producto_id", limit: 4
+    t.integer  "boleta_id",   limit: 4
+    t.datetime "fecha"
+    t.integer  "monto",       limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "ventas", force: :cascade do |t|
+    t.integer  "numero",      limit: 4
+    t.integer  "cliente_id",  limit: 4
+    t.integer  "usuario_id",  limit: 4
+    t.integer  "producto_id", limit: 4
+    t.datetime "fecha"
+    t.integer  "monto",       limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "boleta_id",   limit: 4
+  end
+
+  add_index "ventas", ["boleta_id"], name: "fk_rails_a3016acebf", using: :btree
+  add_index "ventas", ["cliente_id"], name: "fk_rails_a70a7aa019", using: :btree
+  add_index "ventas", ["producto_id"], name: "fk_rails_6d564d1363", using: :btree
+  add_index "ventas", ["usuario_id"], name: "fk_rails_c97c3d8eda", using: :btree
+
   add_foreign_key "clientes", "comunas"
   add_foreign_key "comunas", "provincias"
   add_foreign_key "productos", "categorias"
@@ -147,4 +197,8 @@ ActiveRecord::Schema.define(version: 20160930163029) do
   add_foreign_key "productos", "proveedors"
   add_foreign_key "proveedors", "comunas"
   add_foreign_key "provincias", "regiones", column: "region_id"
+  add_foreign_key "ventas", "boletas"
+  add_foreign_key "ventas", "clientes"
+  add_foreign_key "ventas", "productos"
+  add_foreign_key "ventas", "users", column: "usuario_id"
 end

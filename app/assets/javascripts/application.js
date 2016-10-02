@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require adminlte
+//= require jquery_nested_form
 //= require_tree .

@@ -207,6 +207,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (>= 0.3.13, < 0.5)
+  nested_form
   prawn
   prawn-table (~> 0.1.0)
   rails (= 4.2.6)

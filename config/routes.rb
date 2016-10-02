@@ -53,6 +53,15 @@ Rails.application.routes.draw do
   patch 'productos/:id' ,to: 'productos#update'
   delete 'productos/:id', to: 'productos#eliminar'
 
+  get 'boletas/', to: 'boletas#index', as: 'boletas'
+  get 'boletas/nuevo', as: 'nuevo_boleta'
+  post 'boletas/', to: 'boletas#crear'
+  get 'boletas/:id/editar', to: 'boletas#editar', as: 'editar_boleta'
+  get 'boletas/:id', to: 'boletas#mostrar', as: 'boleta'
+  put 'boletas/:id',to: 'boletas#update'
+  patch 'boletas/:id' ,to: 'boletas#update'
+  delete 'boletas/:id', to: 'boletas#eliminar'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
