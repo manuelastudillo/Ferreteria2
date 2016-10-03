@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  fecha: 2016-10-02
+  numero: 1
+  monto: 1
+  cantidad: 1
+  total: 1
+  text: 
+
+two:
+  nombre: MyString
+  fecha: 2016-10-02
+  numero: 1
+  monto: 1
+  cantidad: 1
+  total: 1
+  text: 

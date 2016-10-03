@@ -1,0 +1,13 @@
+<div class="field">
+  <%= f.label :nombre, 'Nombre de la tarea' %><br>
+  <%= f.text_field :nombre %>
+</div>
+<div class="field">
+  <%= f.collection_check_boxes :producto_ids, Producto.all, :id, :nombre %>
+</div>
+  <fieldset id="tareas">
+    <%= f.fields_for :tareas %>
+    <p><%= f.link_to_add "Agregar una tarea", :tareas %></p>
+  </fieldset>
+
+<%= f.link_to_remove "Eliminar esta tarea" %>

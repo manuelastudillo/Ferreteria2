@@ -34,7 +34,9 @@
     <p><%= f.link_to_add "Agregar una tarea", :ventas %></p>
   </fieldset>
 
-
+<div class="field">
+  <%= f.collection_check_boxes :producto_ids, Producto.all, :id, :nombre %>
+</div>
 
 
   <div class="actions">
