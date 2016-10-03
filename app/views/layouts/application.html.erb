@@ -18,6 +18,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="skin-blue">
+<%  if user_signed_in? %>
+
+
 
   <%= render "layouts/application_header" %>
 
@@ -36,7 +39,7 @@
           <% end %>
         </div>
       <% end %>
-
+<%end%>
 
 
       <%= yield %>

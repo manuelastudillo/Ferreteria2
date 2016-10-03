@@ -8,7 +8,7 @@ class Producto < ActiveRecord::Base
 
       validates :nombre,  length: {minimum: 2, maximum: 50, :message => " debe tener entre 2 y 50 caracteres"}
 validates :abreviacion,  length: {minimum: 2, maximum: 50, :message => " debe tener entre 2 y 50 caracteres"}
-validates :comision, numericality: { only_integer: true, :message => " debe contener solo numeros"}
+validates :comision, numericality: {only_integer: true, :message => " debe contener solo numeros"}
 validates :stock, numericality: { only_integer: true, :message => " debe contener solo numeros"}
 validates :stockminimo, numericality: { only_integer: true, :message => " debe contener solo numeros"}
 validates :precio_compra, numericality: { only_integer: true, :message => " debe contener solo numeros"}
