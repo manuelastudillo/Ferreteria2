@@ -1,4 +1,5 @@
 class FacturasController < ApplicationController
+   before_action :authenticate_user!
   before_action :set_factura, only: [:show, :edit, :update, :destroy]
 
   # GET /facturas
@@ -70,7 +71,7 @@ class FacturasController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def factura_params
       params.require(:factura).permit(:nombre, :fecha, :numero, :monto, :cantidad, :total, :text, tareas_attributes: [
-      :id, :nombre, :fecha, :monto, :_destroy, cliente_ids:[]
+      :id, :nombre, :fecha, :monto, :_destroy, producto_ids:[]
     ]
   )
     end

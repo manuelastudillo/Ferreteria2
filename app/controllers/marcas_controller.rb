@@ -1,4 +1,5 @@
 class MarcasController < ApplicationController
+   before_action :authenticate_user!
 before_action :set_marca, only: [:mostrar, :editar, :update, :eliminar]
 
 

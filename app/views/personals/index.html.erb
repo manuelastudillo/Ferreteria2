@@ -1,0 +1,33 @@
+<% content_for :content_header  do %>
+    <section class="content-header">
+      <h1>Personal</h1>
+    <span class="tn btn-success btn-lg bt pull-right glyphicon glyphicon-plus"<>/span>
+   
+    </section>
+<% end %>
+
+<section class="content invoice">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Mostrar</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |usuarios|%>
+        <tr>
+          <td><%= usuarios.nombre%> </td>
+         <td><span class="glyphicon glyphicon-play" aria-hidden="true" ></span><%= link_to 'Mostrar', personals %> </td>
+
+       
+    <%end%>
+    </tbody>
+  </table>
+       
+     
+  <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+</section>
+

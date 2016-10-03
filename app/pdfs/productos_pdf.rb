@@ -18,7 +18,7 @@ class ProductosPdf < Prawn::Document
 end
 
     def line_item_rows
-    	[["nombre","Abreviacion","Precio","Stock"]]+
+    	[["Nombre","Abreviacion","Precio","Stock"]]+
     	@productos.map do  |item|
     	[item.nombre, item.abreviacion, item.precio_venta, item.stock] 
     	end

@@ -1,10 +1,19 @@
 class ProveedorsController < ApplicationController
+   before_action :authenticate_user!
   before_action :set_proveedor, only: [:mostrar, :editar, :update, :eliminar]
 
 
   def index
     @proveedors = Proveedor.paginate(:page => params[:page], :per_page => 10)
-
+     respond_to do |format|
+     format.html
+     format.pdf do
+      pdf = ProveedorsPdf.new(@provedors)
+     send_data pdf.render, :filename =>'Provedors.pdf',  
+                           :type =>'aplication/pdf',
+                           :disposition => 'inline'
+end  
+end  
   end
 
   def nuevo

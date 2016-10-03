@@ -1,4 +1,5 @@
 class BoletasController < ApplicationController
+ before_action :authenticate_user!
  before_action :set_boleta, only: [:mostrar, :editar, :update, :eliminar]
 
 

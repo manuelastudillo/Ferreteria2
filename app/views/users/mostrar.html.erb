@@ -1,0 +1,66 @@
+<% content_for :content_header  do %>
+    <section class="content-header">
+      <h1>Personals</h1>
+
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><%= link_to "Clientes", users_path %></li>
+        <li class="active">Mostrar</li>
+      </ol>
+    </section>
+<% end %>
+
+<section class="content invoice botones">
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @user.nombre %>
+  </p>
+  
+  <p>
+    <strong> Domicilio:</strong>
+    <%= @user.calle %>
+  </p>
+
+
+  <p>
+    <strong> Rut Personal:</strong>
+    <%= @user.rut %>
+  </p>
+
+
+
+
+    <p>
+    <strong> Telefono 1:</strong>
+    <%= @user.telefono %>
+  </p>
+
+    <p>
+    <strong> Telefono 2:</strong>
+    <%= @user.telefono1 %>
+  </p>
+
+  <p>
+    <strong> Fecha de ingreso:</strong>
+    <%= @user.fechaingreso %>
+  </p>
+
+  <p>
+    <strong> Sueldo:</strong>
+    <%= @user.sueldo %>
+  </p>
+
+  <p>
+    <strong> Email:</strong>
+    <%= @user.email %>
+  </p>
+  
+
+
+  
+
+
+
+  <%= link_to 'Atras', users_url,:class =>"btn btn-info" %>
+</section>

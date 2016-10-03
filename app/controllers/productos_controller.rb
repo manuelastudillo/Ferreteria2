@@ -1,4 +1,5 @@
 class ProductosController < ApplicationController
+   before_action :authenticate_user!
   before_action :set_producto, only: [:mostrar, :editar, :update, :eliminar]
   #before_action :authenricate_usarios, only: [:mostrar,:editar,:update,:eliminar]
 

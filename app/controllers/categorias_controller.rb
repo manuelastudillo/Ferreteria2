@@ -1,4 +1,5 @@
 class CategoriasController < ApplicationController
+   before_action :authenticate_user!
   before_action :set_categoria, only: [:mostrar, :editar, :update, :eliminar]
 
 

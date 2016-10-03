@@ -3,20 +3,24 @@
   <div class="user-panel">
 
     <div class="pull-left info">
-      <p>Hello</p>
 
-      <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+
+     
     </div>
   </div>
   <!-- search form -->
+   <!--
   <form action="#" method="get" class="sidebar-form">
+ 
     <div class="input-group">
       <input type="text" name="q" class="form-control" placeholder="Search..."/>
       <span class="input-group-btn">
         <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
       </span>
     </div>
+
   </form>
+   -->
   <!-- /.search form -->
   <!-- sidebar menu: : style can be found in sidebar.less -->
   <ul class="sidebar-menu">
@@ -41,10 +45,20 @@
       <i class="fa fa-user"></i> <span>Clientes</span>
     <% end %>
 
-   <%= nav_link boletas_path do %>
-      <i class="fa fa-user"></i> <span>Boletas</span>
+
+   <%= nav_link rails_admin.index_path('user') do %>
+      <i class="fa fa-lock"></i> <span>Administrador</span>
     <% end %>
 
+<%= nav_link boletas_path do %>
+      <i class="fa fa-money"></i> <span>Pruebas</span>
+    <% end %>
+
+    <%= nav_link facturas_path do %>
+      <i class="fa fa-money"></i> <span>Pruebas</span>
+    <% end %>
+
+<!--
     <%= treeview_link 'Lots of links here' do %>
       <%= nav_link "#" do %>
         <i class="fa fa-angle-double-right"></i>
@@ -54,6 +68,7 @@
         <i class="fa fa-angle-double-right"></i>
         Another
       <% end %>
+      -->
     <% end %>
   </ul>
 </section>

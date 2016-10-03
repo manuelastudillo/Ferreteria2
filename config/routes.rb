@@ -8,6 +8,13 @@ Rails.application.routes.draw do
   devise_for :users
   root 'bienvenido#index'
 
+  get 'users/', to: 'users#index', as: 'users'
+  get 'users/:id', to: 'users#mostrar', as: 'user'
+
+
+  get 'personals/', to: 'personals#index', as: 'personals'
+  get 'personals/:id', to: 'personals#mostrar', as: 'personal'
+
   get 'clientes/', to: 'clientes#index', as: 'clientes'
   get 'clientes/nuevo', as: 'nuevo_cliente'
   post 'clientes/', to: 'clientes#crear'
